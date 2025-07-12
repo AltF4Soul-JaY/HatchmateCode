@@ -1,209 +1,73 @@
-# HatchMate-Code
+# Welcome to your Lovable project
 
-*Code. Collaborate. Commit.*
+## Project info
 
-HatchMate-Code is a web-based developer environment that allows users to generate, view, edit, run, and deploy full-stack applications with AI assistance. Built with React, TypeScript, and powered by Together AI.
+**URL**: https://lovable.dev/projects/dea2cbcf-aaa5-4069-9862-50150a45eccc
 
-## Features
+## How can I edit this code?
 
-### 🤖 Chat-Driven AI Coding
-- Generate complete full-stack applications using natural language prompts
-- Powered by Together AI's CodeLlama model
-- Context-aware code generation that understands your existing project
+There are several ways of editing your application.
 
-### 📁 File Explorer + Monaco Editor
-- Interactive file tree with folder navigation
-- Professional code editor with syntax highlighting
-- Support for multiple programming languages
-- Real-time file editing and management
+**Use Lovable**
 
-### 🖥️ WebContainer Runtime
-- Browser-based Node.js environment simulation
-- Real-time `npm install` and `npm run dev` execution
-- Integrated terminal with command output
+Simply visit the [Lovable Project](https://lovable.dev/projects/dea2cbcf-aaa5-4069-9862-50150a45eccc) and start prompting.
 
-### 👁️ Live Preview
-- Sandboxed iframe preview of your applications
-- Auto-reload on file changes
-- External preview window support
+Changes made via Lovable will be committed automatically to this repo.
 
-### 🐙 GitHub Integration
-- OAuth authentication with GitHub
-- Create repositories directly from the IDE
-- Push generated code with one click
-- Secure token management
+**Use your preferred IDE**
 
-### 🚀 Deployment Ready
-- One-click deployment capabilities
-- Integration with popular hosting platforms
-- Environment configuration management
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-## Getting Started
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-- Together AI API key
-- GitHub OAuth app credentials
+Follow these steps:
 
-### Installation
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd hatchmate-code
-   ```
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-2. **Install frontend dependencies**
-   ```bash
-   npm install
-   ```
+# Step 3: Install the necessary dependencies.
+npm i
 
-3. **Install backend dependencies**
-   ```bash
-   npm run server:install
-   ```
-
-4. **Configure environment variables**
-   
-   Frontend (`.env`):
-   ```env
-   VITE_TOGETHER_API_KEY=your-together-api-key
-   VITE_GITHUB_CLIENT_ID=your-github-client-id
-   ```
-   
-   Backend (`server/.env`):
-   ```env
-   TOGETHER_API_KEY=your-together-api-key
-   GITHUB_CLIENT_ID=your-github-client-id
-   GITHUB_CLIENT_SECRET=your-github-secret
-   PORT=3001
-   ```
-
-5. **Start the development servers**
-   
-   Terminal 1 (Frontend):
-   ```bash
-   npm run dev
-   ```
-   
-   Terminal 2 (Backend):
-   ```bash
-   npm run server
-   ```
-
-### Setting Up API Keys
-
-#### Together AI
-1. Visit [Together AI](https://api.together.xyz/)
-2. Create an account and get your API key
-3. Add it to your environment variables
-
-#### GitHub OAuth
-1. Go to GitHub Settings > Developer settings > OAuth Apps
-2. Create a new OAuth app with:
-   - Homepage URL: `http://localhost:5173`
-   - Authorization callback URL: `http://localhost:5173/auth/github/callback`
-3. Copy the Client ID and Client Secret to your environment variables
-
-## Usage
-
-### Generating Code
-1. Open the chat panel on the right
-2. Describe what you want to build (e.g., "Create a React todo app with TypeScript")
-3. The AI will generate complete project files
-4. Files appear in the explorer and can be edited in Monaco Editor
-
-### Running Projects
-1. Click the "Run" button in the header
-2. The WebContainer will install dependencies and start the dev server
-3. View the live preview in the preview panel
-
-### GitHub Integration
-1. Click "Connect GitHub" in the header
-2. Authorize the application
-3. Use "Push to GitHub" to create a repository with your generated code
-
-## Architecture
-
-### Frontend
-- **React 18** with TypeScript
-- **Tailwind CSS** for styling
-- **Zustand** for state management
-- **Monaco Editor** for code editing
-- **WebContainer API** for browser-based runtime
-
-### Backend
-- **Express.js** server
-- **Together AI API** integration
-- **GitHub REST API** integration
-- **CORS** enabled for cross-origin requests
-
-### Key Components
-- `ChatPanel`: AI interaction interface
-- `FileExplorer`: File tree navigation
-- `CodeEditor`: Monaco-based code editor
-- `Preview`: Live application preview
-- `Terminal`: Command output display
-- `Header`: Main navigation and controls
-
-## API Endpoints
-
-### POST `/api/generate`
-Generate code from natural language prompts
-```json
-{
-  "prompt": "Create a React todo app",
-  "context": { "existing": "files" }
-}
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
 
-### POST `/api/github/create-repo`
-Create a new GitHub repository
-```json
-{
-  "name": "my-project",
-  "description": "Generated with HatchMate-Code",
-  "private": false
-}
-```
+**Edit a file directly in GitHub**
 
-### POST `/api/github/push-files`
-Push files to GitHub repository
-```json
-{
-  "repoName": "my-project",
-  "files": { "index.js": "console.log('hello')" },
-  "commitMessage": "Initial commit"
-}
-```
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-## Security
+**Use GitHub Codespaces**
 
-- API keys are never exposed to the frontend
-- All external API calls are proxied through the backend
-- GitHub tokens are handled securely
-- CORS policies restrict unauthorized access
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## Contributing
+## What technologies are used for this project?
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+This project is built with:
 
-## License
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-MIT License - see LICENSE file for details
+## How can I deploy this project?
 
-## Support
+Simply open [Lovable](https://lovable.dev/projects/dea2cbcf-aaa5-4069-9862-50150a45eccc) and click on Share -> Publish.
 
-For issues and questions:
-- Create an issue on GitHub
-- Check the documentation
-- Review the example configurations
+## Can I connect a custom domain to my Lovable project?
 
----
+Yes, you can!
 
-Built with ❤️ by the HatchMate team
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
